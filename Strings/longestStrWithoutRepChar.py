@@ -1,5 +1,5 @@
 def longestSubStrWithoutRepeatingChar(s):
-    if s==None and lsn(s) == 0:
+    if s==None and len(s) == 0:
         return 0
     if len(s)==1:
         return 1
