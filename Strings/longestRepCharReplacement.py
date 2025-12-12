@@ -8,7 +8,7 @@ def charcterReplacement(s,k):
         occurance[ord(s[right])-ord('A')] +=1
         maxOccurance=max(maxOccurance,occurance[ord(s[right])-ord('A')])
 
-        while (right-left +1 )-maxOccurance>k:
+        if(right-left +1 )-maxOccurance>k:
             occurance[ord(s[left])-ord('A')]-=1
             left+=1
 

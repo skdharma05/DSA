@@ -45,7 +45,7 @@ def longestSubarray(nums, k):
             left+=1
         
         if sum == k:
-            maxLen = max(maxLen,rigth-left+1)
+            maxLen = max(maxLen,right-left+1)
         
         right+=1
         if right<n:
