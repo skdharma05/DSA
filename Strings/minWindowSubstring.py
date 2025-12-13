@@ -34,7 +34,6 @@ def minWindowSubStr(s,t):
         return ""
     return s[ans[1]:ans[2]+1]
 
-
 def main():
     s = 'ADOBECODEBANC'
     t = 'ABC'
