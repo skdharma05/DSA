@@ -44,14 +44,81 @@ class Node:
         temp.prev = None
 
         return head
+    
+    @staticmethod
+    def deleteK(head,k):
+        if head is None:
+            return None
+        
+        if k == 1:
+            newhead = head.next
+            if newhead:
+                newhead.prev = None
+                head.next = None
+            return newhead
+        
+        temp = head
+        count =  1
+
+        while temp is not None and count < k :
+            temp = temp.next
+            count += 1
+
+        if  k is None:
+            return head
+        prev = temp.prev
+        front = temp.next
+
+        if prev:
+            prev.next = front
+        if front:
+            front.prev = prev
+
+        temp.next = None
+        temp.prev = None
+
+        return head
+    
+    @staticmethod
+    def deleteElement(head,k):
+        if head is None:
+            return None
+        
+        if head.data == k:
+            newHead = head.next  
+            if newHead:
+                newHead.prev = None
+            head.next = None
+            return newHead
+
+        temp = head
+        while temp is not None :
+            if temp.data == k:   
+                prev = temp.prev
+                front = temp.next
+                if prev:
+                    prev.next = front
+                if front:
+                    front.prev = prev
+            
+                temp.next = None
+                temp.prev = None
+                break
+            
+            temp = temp.next
+
+        return head
+    
 
     
 if __name__ == '__main__':
     arr= [1,2,3,4,5,6]
     head = Node.array_to_linked_list(arr=arr)
     # delete_head = Node.deleteHead(head)
-    delete_tail= Node.deleteTail(head)
+    # delete_tail = Node.deleteTail(head)
+    # delete_k = Node.deleteK(head,7)
+    delete_Element = Node.deleteElement(head,5)
 
-    while delete_tail:
-        print(delete_tail.data)
-        delete_tail = delete_tail.next
+    while delete_Element:
+        print(delete_Element.data)
+        delete_Element = delete_Element.next

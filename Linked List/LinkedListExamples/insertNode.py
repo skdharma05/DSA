@@ -80,9 +80,9 @@ if __name__ == "__main__":
     # insert_head =Node.insertHead(head,4) 
     # insert_tail =Node.insertTail(head,6) 
     # insert_k =Node.insertK(head,el=9,k=3) 
-    inert_vaalue =Node.insertElement(head,3,el=8) 
+    insert_value =Node.insertElement(head,3,el=8) 
     
-    while inert_vaalue:
-        print(inert_vaalue.data)
-        inert_vaalue = inert_vaalue.next
+    while insert_value:
+        print(insert_value.data)
+        insert_value = insert_value.next
     
